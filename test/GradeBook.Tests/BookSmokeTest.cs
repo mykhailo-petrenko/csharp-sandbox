@@ -45,5 +45,22 @@ namespace GradeBook.Tests
             Assert.Equal(1, statistics.Low);
             Assert.Equal(2, statistics.High);
         }
+
+        [Fact]
+        public void AddGrade_ShouldNotAcceptLessThenMinGrade()
+        {
+            var b1 = new Book("Min Range");
+            
+            Assert.Throws<ArgumentOutOfRangeException>(() => b1.AddGrade(-1));
+        }
+
+                [Fact]
+        public void AddGrade_ShouldNotAcceptMoreThenMaxGrade()
+        {
+            var b1 = new Book("Max Range");
+            
+            Assert.Throws<ArgumentOutOfRangeException>(() => b1.AddGrade(101));
+        }
+
     }
 }

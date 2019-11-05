@@ -1,19 +1,27 @@
 using System.Collections.Generic;
+using System;
 
 namespace GradeBook {
 
     public class Book {
 
-        private string name;
+        public const double MAX_GRADE = 100;
+        public const double MIN_GRADE = 0;
+
+        public string Name { get; set; }
         private List<double> grades;
 
         public Book(string name) {
-            this.name = name;
+            Name = name;
             grades = new List<double>();
         }
 
         public void AddGrade(double grade)
         {
+            if (grade < MIN_GRADE || grade > MAX_GRADE) {
+                throw new ArgumentOutOfRangeException($"grade should be between {MIN_GRADE} and {MAX_GRADE}");
+            }
+
             grades.Add(grade);
         }
 
@@ -51,7 +59,7 @@ namespace GradeBook {
         {
             string gradesList = string.Join(' ', grades);
 
-            return $"'{name}': {gradesList}";
+            return $"'{Name}': {gradesList}";
         }
     }
 }
