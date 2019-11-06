@@ -1,10 +1,17 @@
 version: 2
 jobs:
-	build:
-		docker:
-			- image: microsoft/aspnetcore-build:2.1
-		steps:
-			- checkout
-			- run: find .
-			- run: dotnet restore
-			- run: dotnet test test/GradeBook.Tests
+  build:
+    docker:
+      - image: jetcipher/circleci-dotnet-core:2.1
+    steps:
+      - checkout
+      - run:
+          name: Restore
+          command: dotnet restore
+      - run:
+          name: Build
+          command: dotnet build
+      - run:
+          name: Running Tests
+          command: dotnet test
+          working_directory: test/GradeBook.Tests
