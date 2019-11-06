@@ -8,7 +8,7 @@ namespace GradeBook {
         public const double MAX_GRADE = 100;
         public const double MIN_GRADE = 0;
 
-        public string Name { get; set; }
+        public string Name { get; }
         private List<double> grades;
 
         public Book(string name) {

@@ -6,6 +6,15 @@ namespace GradeBook.Tests
     public class BookSmokeTest
     {
         [Fact]
+        public void BookConstructor_ShouldSetName()
+        {
+            string expectedName = "Hello Name";
+            var b = new Book(expectedName);
+
+            Assert.Equal(expectedName, b.Name);
+        }
+
+        [Fact]
         public void ToString_shouldContainName()
         {
             var book = new Book("Test");
@@ -61,6 +70,5 @@ namespace GradeBook.Tests
             
             Assert.Throws<ArgumentOutOfRangeException>(() => b1.AddGrade(101));
         }
-
     }
 }
