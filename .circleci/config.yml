@@ -11,4 +11,15 @@ jobs:
                 command: dotnet restore
             - run: 
                 name: Running Tests
-                command: dotnet test test/GradeBook.Tests
+                command: dotnet test --no-build --logger "trx;LogFileName=../../results/results.trx" test/GradeBook.Tests
+            - run:
+                name: COnvert Test Results
+                command: |
+                    dotnet tool install -g trx2junit
+                    export PATH="$PATH:/root/.dotnet/tools"
+                    trx2junit test/results*.trx
+            - store_test_results:
+                path: test/results
+            - store_artifacts:
+                path: test/results
+                destination: results
