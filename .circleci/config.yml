@@ -16,7 +16,7 @@ jobs:
                 name: Running Tests
                 command: dotnet test --no-build --logger "trx;LogFileName=../../results/results.trx" test/GradeBook.Tests
             - run:
-                name: COnvert Test Results
+                name: Convert Test Results
                 command: |
                     dotnet tool install -g trx2junit
                     export PATH="$PATH:/root/.dotnet/tools"
