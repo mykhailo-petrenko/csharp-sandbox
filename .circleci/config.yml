@@ -10,6 +10,9 @@ jobs:
                 name: Restore
                 command: dotnet restore
             - run: 
+                name: Build
+                command: dotnet build
+            - run: 
                 name: Running Tests
                 command: dotnet test --no-build --logger "trx;LogFileName=../../results/results.trx" test/GradeBook.Tests
             - run:
