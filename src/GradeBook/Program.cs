@@ -6,20 +6,18 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            var b1 = new Book("John");
-            var b2 = new Book("Dolly");
+            var demo = new Book("Demo");
 
-            b1.AddGrade(12.0);
-            b1.AddGrade(11.1);
-            b1.AddGrade(10.2);
+            demo.AddGrade(95);
+            demo.AddGrade(50);
+            demo.AddGrade(90);
+            demo.AddGrade(100);
+            demo.AddGrade(83.3);
 
-            b2.AddGrade(11.2);
-            b2.AddGrade(13.3);
-            b2.AddGrade(13.1);
 
             Console.WriteLine("Hello World!");
-            Console.WriteLine(b1.ToString());
-            Console.WriteLine(b2.ToString());
+            Console.WriteLine(demo.ToString());
+            Console.WriteLine(demo.GetStatistics().ToString());
         }
     }
 }

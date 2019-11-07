@@ -5,6 +5,7 @@ namespace GradeBook {
         public double Average { get; set; }
         public double High {get; set; }
         public double Low { get; set; }
+        public string Letter { get; set; }
 
         public Statistics() {
             
@@ -14,6 +15,12 @@ namespace GradeBook {
             this.Average = average;
             this.High = high;
             this.Low = low;
+            this.Letter = Grade.GradeToLetter(average);
+        }
+
+        public override string ToString()
+        {
+            return $"Letter: {Letter}\nAvg: {Average}\nHi: {High}\nLo:{Low}";
         }
     }
 }

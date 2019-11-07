@@ -1,15 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DFE1A6F2-FA4A-4E58-8957-97057DE8B49A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeBook", "src\GradeBook\GradeBook.csproj", "{C780772C-617F-449A-9069-FA3D17F0BCD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradeBook", "src\GradeBook\GradeBook.csproj", "{C780772C-617F-449A-9069-FA3D17F0BCD9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0AF6F62D-79BA-42DF-B12F-CC5F4CB8DE04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeBook.Tests", "test\GradeBook.Tests\GradeBook.Tests.csproj", "{908FFC22-DF96-4700-B321-0CF569B67256}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradeBook.Tests", "test\GradeBook.Tests\GradeBook.Tests.csproj", "{908FFC22-DF96-4700-B321-0CF569B67256}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".circleci", ".circleci", "{9F3CA8B7-6566-4652-A3F6-8FDF65938D7B}"
+	ProjectSection(SolutionItems) = preProject
+		config.yml = config.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +24,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C780772C-617F-449A-9069-FA3D17F0BCD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -49,8 +51,14 @@ Global
 		{908FFC22-DF96-4700-B321-0CF569B67256}.Release|x86.ActiveCfg = Release|Any CPU
 		{908FFC22-DF96-4700-B321-0CF569B67256}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C780772C-617F-449A-9069-FA3D17F0BCD9} = {DFE1A6F2-FA4A-4E58-8957-97057DE8B49A}
 		{908FFC22-DF96-4700-B321-0CF569B67256} = {0AF6F62D-79BA-42DF-B12F-CC5F4CB8DE04}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA33F947-E738-47CB-A177-B10062C8857D}
 	EndGlobalSection
 EndGlobal
