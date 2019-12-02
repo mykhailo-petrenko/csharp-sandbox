@@ -3,6 +3,8 @@ using System;
 
 namespace GradeBook {
 
+    public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
     public class Book {
 
         public const double MAX_GRADE = 100;
@@ -23,7 +25,14 @@ namespace GradeBook {
             }
 
             grades.Add(grade);
+
+            if (GradeAdded != null)
+            {
+                GradeAdded(this, new EventArgs());
+            }
         }
+
+        public event GradeAddedDelegate GradeAdded;
 
         public Statistics GetStatistics() {
             if (grades.Count == 0) {
